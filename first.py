@@ -1,4 +1,4 @@
-mport streamlit as st
+import streamlit as st
 # Giving a title 
 st.title('Registration Form')
 # creating a form
