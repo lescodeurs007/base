@@ -13,12 +13,9 @@ import streamlit as st
 import mysql.connector
 
 # Initialize connection.
-# Uses st.experimental_singleton to only run once.
-@st.experimental_singleton
-def init_connection():
-    return mysql.connector.connect(**st.secrets["mysql"])
+# Uses st.experimental_singleton to only run once. mysql.connector.connect(**st.secrets["mysql"])
 
-conn = init_connection()
+conn = mysql.connector.connect(**st.secrets["mysql"])
 
 st.write("Connected to:", conn.get_server_info())
 cursor=conn.cursor()
