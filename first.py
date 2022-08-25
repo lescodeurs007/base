@@ -21,3 +21,7 @@ def init_connection():
 conn = init_connection()
 
 st.write("Connected to:", conn.get_server_info())
+cursor=conn.cursor()
+a=cursor.execute("Select * from test")
+for i in a:
+  st.write(i)
