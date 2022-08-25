@@ -22,6 +22,7 @@ conn = init_connection()
 
 st.write("Connected to:", conn.get_server_info())
 cursor=conn.cursor()
-a=cursor.execute("Select * from Persons")
-for i in a:
-  st.write(i)
+cursor.execute("Select * from Persons")
+a=cursor.fetchall()
+st.write(a)
+
